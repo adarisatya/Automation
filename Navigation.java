@@ -29,6 +29,20 @@ public class Navigation
 				driver.navigate().refresh();
 				Thread.sleep(2000);
 				
+				//Get the Title of the Page
+				String title = driver.getTitle();
+				System.out.println("Get the Title of the Page : " + title);
+				
+				//Get the Current URL of the Page
+				String url = driver.getCurrentUrl();
+				System.out.println("Get the Current URL of the Page : " + url);
+				
+				//Get the PageSource of the Page
+				String source = driver.getPageSource();
+				System.out.println("Get the Page Source of the Page : " + source.length());
+				int preview = Math.min(500, source.length());
+				System.out.println("Page source " + source.substring(0, preview));
+				
 				//Close the browser
 				driver.quit();
 				
